@@ -6,7 +6,7 @@
 
 | Version | Tags  | Dockerfile |
 |---------|-------|------------|
-|  3.3.5  | 3.3.5, latest | [Dockerfile](https://github.com/blacklabelops/crowd/blob/master/Dockerfile) |
+|  3.3.5  | 3.3.5, latest | [Dockerfile](https://github.com/MultiCatLtd/crowd/blob/master/Dockerfile) |
 
 > Older tags remain but are not supported/rebuild.
 
@@ -14,17 +14,17 @@
 
 You may also like:
 
-* [blacklabelops/jira](https://github.com/blacklabelops/jira): The #1 software development tool used by agile teams
-* [blacklabelops/confluence](https://github.com/blacklabelops/confluence): Create, organize, and discuss work with your team
-* [blacklabelops/bitbucket](https://github.com/blacklabelops/bitbucket): Code, Manage, Collaborate
-* [blacklabelops/crowd](https://github.com/blacklabelops/crowd): Identity management for web apps
+* [MultiCatLtd/jira](https://github.com/MultiCatLtd/jira): The #1 software development tool used by agile teams
+* [MultiCatLtd/confluence](https://github.com/MultiCatLtd/confluence): Create, organize, and discuss work with your team
+* [MultiCatLtd/bitbucket](https://github.com/MultiCatLtd/bitbucket): Code, Manage, Collaborate
+* [MultiCatLtd/crowd](https://github.com/MultiCatLtd/crowd): Identity management for web apps
 
 # Make It Short
 
 Docker-Compose:
 
 ~~~~
-$ curl -O https://raw.githubusercontent.com/blacklabelops/crowd/master/docker-compose.yml
+$ curl -O https://raw.githubusercontent.com/MultiCatLtd/crowd/master/docker-compose.yml
 $ docker-compose up -d
 ~~~~
 
@@ -35,7 +35,7 @@ Docker-CLI:
 Just type and follow the manual installation procedure in your browser:
 
 ~~~~
-$ docker run -d -p 8095:8095 --name crowd blacklabelops/crowd
+$ docker run -d -p 8095:8095 --name crowd multicat/crowd
 ~~~~
 
 > Point your browser to http://yourdockerhost:8095
@@ -63,7 +63,7 @@ Secondly, start Crowd:
 ~~~~
 $ docker run -d --name crowd \
 	  --link postgres_crowd:postgres_crowd \
-	  -p 8095:8095 blacklabelops/crowd
+	  -p 8095:8095 multicat/crowd
 ~~~~
 
 >  Starts Crowd and links it to the postgresql instances. JDBC URL: jdbc:postgresql://postgres_crowd/crowddb
@@ -104,7 +104,7 @@ $ docker run -d --name crowd \
     -e "CROWD_URL=http://localhost:8095" \
 	  -e "SPLASH_CONTEXT=" \
     -e "CROWD_CONTEXT=ROOT" \
-	  -p 8095:8095 blacklabelops/crowd
+	  -p 8095:8095 multicat/crowd
 ~~~~
 
 > Splash context will never be shown, crowd will be shown under http://youdockerhost:8095/
@@ -129,7 +129,7 @@ $ docker run -d --name crowd \
     -e "CROWD_CONTEXT=ROOT" \
     -e "CROWDID_CONTEXT=" \
     -e "OPENID_CLIENT_CONTEXT=" \
-	  -p 8095:8095 blacklabelops/crowd
+	  -p 8095:8095 multicat/crowd
 ~~~~
 
 > Subapplications will not be accessible anymore. Crowd will run under root context under http://youdockerhost:8095/
@@ -172,7 +172,7 @@ $ docker run -d --name crowd \
     -e "CROWD_PROXY_NAME=myhost.example.com" \
     -e "CROWD_PROXY_PORT=443" \
     -e "CROWD_PROXY_SCHEME=https" \
-    blacklabelops/crowd
+    multicat/crowd
 ~~~~
 
 > Will set the values inside the server.xml in /opt/crowd/.../server.xml
@@ -188,7 +188,7 @@ $ docker run -d --name crowd \
     -e "CROWD_PROXY_NAME=192.168.99.100" \
     -e "CROWD_PROXY_PORT=80" \
     -e "CROWD_PROXY_SCHEME=http" \
-    blacklabelops/crowd
+    multicat/crowd
 ~~~~
 
 > Example with dockertools
@@ -220,7 +220,7 @@ $ docker run -d --name crowd \
     -e "CROWD_PROXY_NAME=192.168.99.100" \
     -e "CROWD_PROXY_PORT=80" \
     -e "CROWD_PROXY_SCHEME=http" \
-    blacklabelops/crowd
+    multicat/crowd
 ~~~~
 
 > Example with dockertools
@@ -255,7 +255,7 @@ $ docker run -d --name crowd \
     -e "CROWD_PROXY_PORT=443" \
     -e "CROWD_PROXY_SCHEME=https" \
     -e "CROWD_PROXY_SECURE=true" \
-    blacklabelops/crowd
+    multicat/crowd
 ~~~~
 
 Then start NGINX:
@@ -286,6 +286,7 @@ The full feature list is documented here as this image is feature identical with
 This project is very grateful for code and examples from the repositories:
 
 * [atlassianlabs/atlassian-docker](https://bitbucket.org/atlassianlabs/atlassian-docker)
+* [teamatldocker/crowd](https://github.com/teamatldocker/crowd)
 
 # References
 

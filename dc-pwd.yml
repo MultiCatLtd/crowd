@@ -2,7 +2,7 @@ version: '3'
 
 services:
   crowd:
-    image: blacklabelops/crowd
+    image: multicat/crowd
     container_name: crowd
     networks:
       - crowdnet
