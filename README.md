@@ -6,7 +6,7 @@
 
 | Version | Tags  | Dockerfile |
 |---------|-------|------------|
-|  3.5.0  | 3.5.0 | [Dockerfile](https://github.com/MultiCatLtd/crowd/blob/master/Dockerfile) |
+|  3.6.0  | 3.6.0 | [Dockerfile](https://github.com/MultiCatLtd/crowd/blob/master/Dockerfile) |
 
 > Older tags remain but are not supported/rebuild.
 
